@@ -11,13 +11,15 @@ async function getLibrary() {
 
     let bookList = document.getElementById('books');
   
-    bookList.innerHTML += `<tr><th>Title</th>
-        </tr>
+    bookList.innerHTML += `<tr><th>Title</th></tr>
+        <tr><th>Author</th></tr>
+        <tr><th>ISBN</th></tr>
         `;
 
     for (let book of Library) {
-        bookList.innerHTML += `<tr><td>${book.title}</td>
-        </tr>
+        bookList.innerHTML += `<tr><td>${book.title}</td></tr>
+        <tr><td>${book.author}</td></tr>
+        <tr><td>${book.isbn}</td></tr>
         `;
    }
 }
