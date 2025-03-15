@@ -5,16 +5,20 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 
 async function getLibrary() {
 
-let { data: Library, error } = await supabase
-  .from('Library')
-  .select('*')
+    let { data: Library, error } = await supabase
+    .from('Library')
+    .select('*')
 
-  let bookList = document.getElementById('books');
+    let bookList = document.getElementById('books');
   
-  for (let book of Library) {
-     bookList.innerHTML += `<tr><td>${book.title}</td>
-     </tr>
-     `;
+    bookList.innerHTML += `<tr><th>Title</th>
+        </tr>
+        `;
+
+    for (let book of Library) {
+        bookList.innerHTML += `<tr><td>${book.title}</td>
+        </tr>
+        `;
    }
 }
 
